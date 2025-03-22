@@ -1,3 +1,3 @@
 <?php
 
-echo "Hello asdas";
+echo "Stand ready for my arrival!";
