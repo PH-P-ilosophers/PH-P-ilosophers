@@ -21,6 +21,8 @@ function islamicPostTypes()
         'rewrite' => array('slug' => 'events'),
         'has_archive' => true,
         'public' => true,
+        "show_in_rest" => true,
+        "publicly_queryable" => true,
         'labels' => array(
             'name' => "Events",
             'add_new_item' => 'Add New Event',
@@ -30,6 +32,7 @@ function islamicPostTypes()
         ),
         'menu_icon' => 'dashicons-groups'
     ));
+
 
     register_post_type('Ramadan Insights', array(
         'supports' => array('title', 'editor', "excerpt", "custom-fields"),
