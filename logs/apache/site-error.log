@@ -1,0 +1,10 @@
+[Wed Mar 26 07:38:26.573313 2025] [fcgid:warn] [pid 33952:tid 1340] [client 127.0.0.1:49753] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:38:26.575659 2025] [core:error] [pid 33952:tid 1340] [client 127.0.0.1:49753] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:38:38.789563 2025] [fcgid:warn] [pid 33952:tid 1332] [client 127.0.0.1:49773] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/plugins.php
+[Wed Mar 26 07:38:38.789563 2025] [core:error] [pid 33952:tid 1332] [client 127.0.0.1:49773] End of script output before headers: edit.php, referer: http://phpilosophers.local/wp-admin/plugins.php
+[Wed Mar 26 07:38:38.911991 2025] [fcgid:warn] [pid 33952:tid 1328] [client 127.0.0.1:49775] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:38:38.911991 2025] [core:error] [pid 33952:tid 1328] [client 127.0.0.1:49775] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:39:05.803243 2025] [fcgid:warn] [pid 33952:tid 1324] [client 127.0.0.1:49836] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:39:05.803243 2025] [core:error] [pid 33952:tid 1324] [client 127.0.0.1:49836] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:40:04.758145 2025] [fcgid:warn] [pid 33952:tid 1324] [client 127.0.0.1:49965] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
+[Wed Mar 26 07:40:04.758145 2025] [core:error] [pid 33952:tid 1324] [client 127.0.0.1:49965] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/edit.php?post_type=page
