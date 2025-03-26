@@ -32,7 +32,7 @@ function islamicPostTypes()
     ));
 
     register_post_type('Ramadan Insights', array(
-        'supports' => array('title', 'editor',"excerpt","custom-fields"),
+        'supports' => array('title', 'editor', "excerpt", "custom-fields"),
         'rewrite' => array('slug' => 'ramadan-insights'),
         'has_archive' => true,
         'public' => true,
@@ -45,9 +45,9 @@ function islamicPostTypes()
         ),
         'menu_icon' => 'dashicons-format-quote'
     ));
-    
+
     register_post_type('Ramadan Years', array(
-        'supports' => array('title', 'editor',"excerpt","custom-fields"),
+        'supports' => array('title', 'editor', "excerpt", "custom-fields"),
         'rewrite' => array('slug' => 'ramadan-year'),
         'has_archive' => true,
         'public' => true,
@@ -59,6 +59,35 @@ function islamicPostTypes()
             'singular_name' => "Ramadan Year  "
         ),
         'menu_icon' => 'dashicons-calendar'
+    ));
+
+    register_post_type('Prayer Times', array(
+        'supports' => array('title', 'editor', "custom-fields"),
+        'rewrite' => array('slug' => 'prayer-times'),
+        'has_archive' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => "Prayer Times",
+            'add_new_item' => 'Add New Prayer Time',
+            'edit_item' => 'Edit Prayer Time',
+            'all_items' => 'All Prayer Times',
+            'singular_name' => "Prayer Time  "
+        ),
+        'menu_icon' => 'dashicons-clock'
+    ));
+    register_post_type('Islamic Reminders', array(
+        'supports' => array('title', 'editor', "excerpt", "custom-fields"),
+        'rewrite' => array('slug' => 'islamic-reminders'),
+        'has_archive' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => "Islamic Reminders",
+            'add_new_item' => 'Add New Islamic Reminder',
+            'edit_item' => 'Edit Islamic Reminder',
+            'all_items' => 'All Islamic Reminders',
+            'singular_name' => "Islamic Reminder  "
+        ),
+        'menu_icon' => 'dashicons-bell'
     ));
 }
 add_action("init", "islamicPostTypes");
