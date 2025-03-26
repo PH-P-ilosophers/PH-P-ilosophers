@@ -52,3 +52,12 @@ AH00558: httpd.exe: Could not reliably determine the server's fully qualified do
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::3df4:1179:7d4:ccc. Set the 'ServerName' directive globally to suppress this message
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::3df4:1179:7d4:ccc. Set the 'ServerName' directive globally to suppress this message
 [Wed Mar 26 02:10:35.250736 2025] [mpm_winnt:notice] [pid 16920:tid 860] AH00354: Child: Starting 64 worker threads.
+[Wed Mar 26 03:13:54.193924 2025] [mpm_event:notice] [pid 59654:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Wed Mar 26 03:13:54.194583 2025] [core:notice] [pid 59654:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Wed Mar 26 03:32:37.221094 2025] [mpm_event:notice] [pid 59654:tid 8268198464] AH00491: caught SIGTERM, shutting down
+[Wed Mar 26 03:32:39.486644 2025] [mpm_event:notice] [pid 60221:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Wed Mar 26 03:32:39.486981 2025] [core:notice] [pid 60221:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Wed Mar 26 03:38:36.119634 2025] [mpm_event:notice] [pid 60221:tid 8268198464] AH00491: caught SIGTERM, shutting down
+[Wed Mar 26 03:39:18.723595 2025] [mpm_event:notice] [pid 60385:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Wed Mar 26 03:39:18.724126 2025] [core:notice] [pid 60385:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Wed Mar 26 03:46:02.769437 2025] [mpm_event:notice] [pid 60385:tid 8268198464] AH00491: caught SIGTERM, shutting down
