@@ -30,6 +30,36 @@ function islamicPostTypes()
         ),
         'menu_icon' => 'dashicons-groups'
     ));
+
+    register_post_type('Ramadan Insights', array(
+        'supports' => array('title', 'editor',"excerpt","custom-fields"),
+        'rewrite' => array('slug' => 'ramadan-insights'),
+        'has_archive' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => "Ramadan Insights",
+            'add_new_item' => 'Add New Ramadan Insight',
+            'edit_item' => 'Edit Ramadan Insight',
+            'all_items' => 'All Ramadan Insights',
+            'singular_name' => "Ramadan Insight  "
+        ),
+        'menu_icon' => 'dashicons-format-quote'
+    ));
+    
+    register_post_type('Ramadan Years', array(
+        'supports' => array('title', 'editor',"excerpt","custom-fields"),
+        'rewrite' => array('slug' => 'ramadan-year'),
+        'has_archive' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => "Ramadan Years",
+            'add_new_item' => 'Add New Ramadan Year',
+            'edit_item' => 'Edit Ramadan Year',
+            'all_items' => 'All Ramadan Years',
+            'singular_name' => "Ramadan Year  "
+        ),
+        'menu_icon' => 'dashicons-calendar'
+    ));
 }
 add_action("init", "islamicPostTypes");
 ?>
