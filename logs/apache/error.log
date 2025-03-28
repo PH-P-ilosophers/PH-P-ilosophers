@@ -121,3 +121,6 @@ AH00558: httpd.exe: Could not reliably determine the server's fully qualified do
 [Thu Mar 27 06:22:54.089833 2025] [mpm_event:notice] [pid 70914:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
 [Thu Mar 27 06:22:54.090445 2025] [core:notice] [pid 70914:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
 [Thu Mar 27 06:24:51.162285 2025] [mpm_event:notice] [pid 70914:tid 8268198464] AH00491: caught SIGTERM, shutting down
+[Thu Mar 27 19:42:41.023252 2025] [mpm_event:notice] [pid 71771:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Thu Mar 27 19:42:41.023922 2025] [core:notice] [pid 71771:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Thu Mar 27 20:37:51.172277 2025] [mpm_event:notice] [pid 71771:tid 8268198464] AH00491: caught SIGTERM, shutting down
