@@ -88,7 +88,7 @@ function islamicPostTypes()
             'add_new_item' => 'Add New Islamic Reminder',
             'edit_item' => 'Edit Islamic Reminder',
             'all_items' => 'All Islamic Reminders',
-            'singular_name' => "Islamic Reminder  "
+            'singular_name' => "Islamic Reminder"
         ),
         'menu_icon' => 'dashicons-bell'
     ));
