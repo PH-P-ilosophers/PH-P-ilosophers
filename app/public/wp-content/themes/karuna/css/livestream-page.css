@@ -1,0 +1,58 @@
+
+.livestream-title{
+    color:black;
+}
+
+
+.author-text, .date-text{
+    color:rgb(56, 56, 56);
+    opacity: 0.55;
+}
+
+.livestream-posts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.livestream-card{
+    margin:4px 10px;
+    border-radius: 15px;
+    padding: 10px;
+    border-style: groove;
+    transition: 0.5s;
+}
+
+.livestream-card:hover{
+    background-color: rgb(181, 205, 187)
+}
+.livestream-card:hover,
+.livestream-card:focus-within {
+    transform: translateY(-0.3rem);
+    ~ .card {
+      transform: translateX(1rem);
+    }
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+.livestream-card-detail-area{
+    display:flex
+}
+.livestream-card-details{
+    flex:4;
+}
+
+.livestream-thumbnail-area{
+    flex:1;
+ }
+ 
+ .livestream-thumbnail{
+     border-radius: 50%;
+     height: 10vh;
+     width: 10vh;
+     object-fit: cover;
+     box-shadow: rgb(54, 72, 92) 0px 20px 30px -10px; 
+     position: sticky;
+    }
+
+
+
