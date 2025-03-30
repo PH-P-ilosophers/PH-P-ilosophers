@@ -197,3 +197,6 @@ AH00558: httpd.exe: Could not reliably determine the server's fully qualified do
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::3df4:1179:7d4:ccc. Set the 'ServerName' directive globally to suppress this message
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::3df4:1179:7d4:ccc. Set the 'ServerName' directive globally to suppress this message
 [Sun Mar 30 01:42:55.221576 2025] [mpm_winnt:notice] [pid 21904:tid 840] AH00354: Child: Starting 64 worker threads.
+[Sun Mar 30 02:02:27.221026 2025] [mpm_event:notice] [pid 81248:tid 8268198464] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Sun Mar 30 02:02:27.221675 2025] [core:notice] [pid 81248:tid 8268198464] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Sun Mar 30 02:10:50.817043 2025] [mpm_event:notice] [pid 81248:tid 8268198464] AH00491: caught SIGTERM, shutting down
