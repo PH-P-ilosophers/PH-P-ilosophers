@@ -35,3 +35,21 @@
 [Sun Mar 30 07:17:39.696121 2025] [fcgid:warn] [pid 74612:tid 1472] (138)timed out: [client 127.0.0.1:52570] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/livestreams/
 [Sun Mar 30 07:20:08.131551 2025] [fcgid:warn] [pid 74612:tid 1472] [client 127.0.0.1:52732] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/livestreams/
 [Sun Mar 30 07:20:08.131551 2025] [fcgid:warn] [pid 74612:tid 1472] (138)timed out: [client 127.0.0.1:52732] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/livestreams/
+[Sun Mar 30 15:54:24.354308 2025] [fcgid:warn] [pid 80248:tid 1460] [client 127.0.0.1:53249] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/islamic-reminders/
+[Sun Mar 30 15:54:24.354308 2025] [fcgid:warn] [pid 80248:tid 1460] (138)timed out: [client 127.0.0.1:53249] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/islamic-reminders/
+[Sun Mar 30 15:56:50.314527 2025] [fcgid:warn] [pid 80248:tid 1460] [client 127.0.0.1:53385] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/wp-admin/
+[Sun Mar 30 15:56:50.314527 2025] [core:error] [pid 80248:tid 1460] [client 127.0.0.1:53385] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/
+[Sun Mar 30 19:17:40.508212 2025] [fcgid:warn] [pid 71076:tid 1500] (OS 109)The pipe has been ended.  : [client 127.0.0.1:50210] mod_fcgid: get overlap result error, referer: http://phpilosophers.local/wp-admin/post.php?post=301&action=edit
+[Sun Mar 30 19:17:40.509209 2025] [core:error] [pid 71076:tid 1500] [client 127.0.0.1:50210] End of script output before headers: admin-ajax.php, referer: http://phpilosophers.local/wp-admin/post.php?post=301&action=edit
+[Sun Mar 30 19:17:40.631805 2025] [fcgid:warn] [pid 71076:tid 1496] (OS 109)The pipe has been ended.  : [client 127.0.0.1:50215] mod_fcgid: get overlap result error
+[Sun Mar 30 19:17:40.631805 2025] [core:error] [pid 71076:tid 1496] [client 127.0.0.1:50215] End of script output before headers: wp-cron.php
+[Sun Mar 30 21:16:14.792993 2025] [fcgid:warn] [pid 21024:tid 1472] [client 127.0.0.1:59379] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:16:14.792993 2025] [fcgid:warn] [pid 21024:tid 1472] (138)timed out: [client 127.0.0.1:59379] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:17:13.210524 2025] [fcgid:warn] [pid 21024:tid 1472] [client 127.0.0.1:52067] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:17:13.210524 2025] [fcgid:warn] [pid 21024:tid 1472] (138)timed out: [client 127.0.0.1:52067] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:20:30.701540 2025] [fcgid:warn] [pid 21024:tid 1436] [client 127.0.0.1:52418] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:20:30.701540 2025] [fcgid:warn] [pid 21024:tid 1436] (138)timed out: [client 127.0.0.1:52418] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:22:07.336347 2025] [fcgid:warn] [pid 21024:tid 1472] [client 127.0.0.1:52507] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:22:07.336347 2025] [fcgid:warn] [pid 21024:tid 1472] (138)timed out: [client 127.0.0.1:52507] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:27:46.848887 2025] [fcgid:warn] [pid 21024:tid 1464] [client 127.0.0.1:52860] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 21:27:46.848887 2025] [fcgid:warn] [pid 21024:tid 1464] (138)timed out: [client 127.0.0.1:52860] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/

@@ -1,19 +1,23 @@
 <?php
 get_header();
 
+global $wp_query;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $query = new WP_Query(array(
     'posts_per_page' => 4,
-    "post_type" => "livestream",
-    "meta-key" => "livestream-date",
     'paged' => $paged,
+    "post_type" => "livestreaming",
+    "meta_key" => "livestream-date",
     "orderby" => "meta_value",
-    "order" => "DESC",
-    'meta-value' => array(
-
-    )
+    "order" => "ASC",
 ));
+
+$tmp_query = $wp_query;
+
+$wp_query = null;
+
+$wp_query = $query;
 ?>
 <h1>Livestreams</h1>
 <div class="livestream-posts-container">
@@ -44,24 +48,20 @@ $query = new WP_Query(array(
 
 
             <?php
-            echo paginate_links();
+
 
 
         }
     }
-    ?>
-    <nav>
-        <ul>
-            <li><?php previous_posts_link('&laquo; PREV', $query->max_num_pages) ?></li>
-            <li><?php next_posts_link('NEXT &raquo;', $query->max_num_pages) ?></li>
-        </ul>
-    </nav>
-    <?php
-    wp_reset_postdata();
+
     ?>
 </div>
-<?php
 
+<?php
+echo "<div class = 'posts-pagination-container'><div class = 'posts-pagination-links'>" . paginate_links() . "</div></div>";
+
+$wp_query = $tmp_query;
+wp_reset_postdata();
 
 
 get_sidebar();
