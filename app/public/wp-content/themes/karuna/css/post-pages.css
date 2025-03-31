@@ -1,0 +1,10 @@
+.posts-pagination-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts-pagination-link{
+    justify-content:  space-evenly;
+}
+

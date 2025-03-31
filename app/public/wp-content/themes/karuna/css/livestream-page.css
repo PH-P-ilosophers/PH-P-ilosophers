@@ -45,14 +45,13 @@
     flex:1;
  }
  
- .livestream-thumbnail{
-     border-radius: 50%;
-     height: 10vh;
-     width: 10vh;
-     object-fit: cover;
-     box-shadow: rgb(54, 72, 92) 0px 20px 30px -10px; 
-     position: sticky;
-    }
+.livestream-thumbnail{
+    border-radius: 10%;
+    height: 10vh;
+    max-width: 30vw;
+    object-fit: cover;
+    box-shadow: rgb(54, 72, 92) 0px 20px 30px -10px; 
+}
 
 
 
