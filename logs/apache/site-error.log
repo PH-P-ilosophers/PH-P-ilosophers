@@ -53,3 +53,4 @@
 [Sun Mar 30 21:22:07.336347 2025] [fcgid:warn] [pid 21024:tid 1472] (138)timed out: [client 127.0.0.1:52507] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
 [Sun Mar 30 21:27:46.848887 2025] [fcgid:warn] [pid 21024:tid 1464] [client 127.0.0.1:52860] mod_fcgid: read timeout from pipe, referer: http://phpilosophers.local/events-page/previous-events/
 [Sun Mar 30 21:27:46.848887 2025] [fcgid:warn] [pid 21024:tid 1464] (138)timed out: [client 127.0.0.1:52860] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/events-page/previous-events/
+[Sun Mar 30 23:16:17.615555 2025] [fcgid:warn] [pid 77768:tid 1468] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client 127.0.0.1:63746] mod_fcgid: ap_pass_brigade failed in handle_request_ipc function, referer: http://phpilosophers.local/livestreams/
