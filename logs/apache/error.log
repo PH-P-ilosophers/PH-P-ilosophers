@@ -374,3 +374,14 @@ AH00558: httpd.exe: Could not reliably determine the server's fully qualified do
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
 [Mon Mar 31 04:44:25.930479 2025] [mpm_winnt:notice] [pid 84780:tid 948] AH00354: Child: Starting 64 worker threads.
+[Fri Apr 04 00:41:49.005580 2025] [core:warn] [pid 1756:tid 8150577728] AH00098: pid file /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri Apr 04 00:41:49.006689 2025] [mpm_event:notice] [pid 1756:tid 8150577728] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Fri Apr 04 00:41:49.006706 2025] [core:notice] [pid 1756:tid 8150577728] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Fri Apr 04 00:43:33.040308 2025] [mpm_event:notice] [pid 1756:tid 8150577728] AH00491: caught SIGTERM, shutting down
+[Fri Apr 04 00:44:05.633567 2025] [mpm_event:notice] [pid 1861:tid 8150577728] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Fri Apr 04 00:44:05.633828 2025] [core:notice] [pid 1861:tid 8150577728] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Fri Apr 04 13:09:40.108472 2025] [mpm_event:notice] [pid 1861:tid 8150577728] AH00491: caught SIGTERM, shutting down
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using Sajdahs-MacBook-Pro.local. Set the 'ServerName' directive globally to suppress this message
+[Sat Apr 05 01:03:50.955881 2025] [mpm_event:notice] [pid 5797:tid 8150577728] AH00489: Apache/2.4.43 (Unix) configured -- resuming normal operations
+[Sat Apr 05 01:03:50.956380 2025] [core:notice] [pid 5797:tid 8150577728] AH00094: Command line: '/Users/sajdah/Library/Application Support/Local/lightning-services/apache-2.4.43+11/bin/darwin-arm64/bin/httpd -D FOREGROUND -f /Users/sajdah/Library/Application Support/Local/run/s-DQ4RfHh/conf/apache/apache2.conf'
+[Sat Apr 05 01:12:45.815035 2025] [mpm_event:notice] [pid 5797:tid 8150577728] AH00491: caught SIGTERM, shutting down
