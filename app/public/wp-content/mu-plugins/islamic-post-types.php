@@ -1,13 +1,14 @@
 <?php
 function islamicPostTypes()
 {
-    register_post_type('Livestream', array(
+    register_post_type('livestreaming', array(
         'supports' => array('title', 'editor', "custom-fields"),
-        'rewrite' => array('slug' => 'livestreams'),
+        'rewrite' => array('slug' => 'livestreaming'),
         'has_archive' => true,
+        "publicly_queryable" => true,
         'public' => true,
         'labels' => array(
-            'name' => "Livestreams",
+            'name' => "Livestreaming",
             'add_new_item' => 'Add New Livestream',
             'edit_item' => 'Edit Livestream',
             'all_items' => 'All Livestreams',
@@ -16,7 +17,26 @@ function islamicPostTypes()
         'menu_icon' => 'dashicons-video-alt2'
     ));
 
-    register_post_type('Events', array(
+
+
+    register_post_type('event-type', array(
+        'supports' => array('title', 'editor', "excerpt", "custom-fields"),
+        'rewrite' => array('slug' => 'events'),
+        'has_archive' => true,
+        'public' => true,
+        "show_in_rest" => true,
+        "publicly_queryable" => true,
+        'labels' => array(
+            'name' => "Event Types",
+            'add_new_item' => 'Add New Event Type',
+            'edit_item' => 'Edit Event Type',
+            'all_items' => 'All Event Types',
+            'singular_name' => "Event Type  "
+        ),
+        'menu_icon' => 'dashicons-groups'
+    ));
+
+    register_post_type('events', array(
         'supports' => array('title', 'editor', "excerpt", "custom-fields"),
         'rewrite' => array('slug' => 'events'),
         'has_archive' => true,
@@ -25,7 +45,7 @@ function islamicPostTypes()
         "publicly_queryable" => true,
         'labels' => array(
             'name' => "Events",
-            'add_new_item' => 'Add New Event',
+            'add_new_item' => 'Add New Event ',
             'edit_item' => 'Edit Event',
             'all_items' => 'All Events',
             'singular_name' => "Event  "
@@ -88,10 +108,12 @@ function islamicPostTypes()
             'add_new_item' => 'Add New Islamic Reminder',
             'edit_item' => 'Edit Islamic Reminder',
             'all_items' => 'All Islamic Reminders',
-            'singular_name' => "Islamic Reminder  "
+            'singular_name' => "Islamic Reminder"
         ),
         'menu_icon' => 'dashicons-bell'
     ));
 }
 add_action("init", "islamicPostTypes");
+
+
 ?>
