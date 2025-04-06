@@ -305,3 +305,15 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Load plugin enhancement file to display admin notices.
  */
 require get_template_directory() . '/inc/plugin-enhancements.php';
+
+function redirectSubscribers() {
+	$currUser = wp_get_current_user();
+	$currUserRoles = count($currUser->roles);
+	$userRole = $currUser->roles[0];
+	if ( $currUserRoles == 1 && $userRole == 'subscriber' ) {
+		wp_redirect( site_url( '/' ) );
+		show_admin_bar( false );
+		exit;
+	}
+}
+add_action( 'admin_init', 'redirectSubscribers' );

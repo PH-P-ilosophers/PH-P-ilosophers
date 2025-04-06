@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<?php get_template_part( 'components/header/site', 'top-bar' ); ?>
-
+		
 		<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
 		<?php if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() ) ) : ?>

@@ -1998,6 +1998,43 @@ figure {
 		vertical-align: middle;
 	}
 
+	.login-wrapper {
+		float: right;
+	}
+
+	.login-button {
+		border: .5px solid #fff;
+		border-radius: 10px;
+		padding: 0.4em 0.8em;
+	}
+	
+	.login-button:hover {
+		color: #1bc562;
+		background-color: #fff;
+	} 
+
+	.logout-button {
+		border: .5px solid #fff;
+		border-radius: 10px;
+		padding: 0.4em 0.8em;
+	}
+
+	.logout-button:hover {
+		color: #fff;
+		background-color: #ff0000;
+	}
+
+	.signup-button {
+		border: .5px solid #fff;
+		border-radius: 10px;
+		padding: 0.4em 0.8em;
+	}
+
+	.signup-button:hover {
+		color: #1bc562	;
+		background-color: #fff;
+
+	}
 	.menu-toggle {
 		display: none;
 	}
