@@ -312,8 +312,18 @@ function redirectSubscribers() {
 	$userRole = $currUser->roles[0];
 	if ( $currUserRoles == 1 && $userRole == 'subscriber' ) {
 		wp_redirect( site_url( '/' ) );
-		show_admin_bar( false );
 		exit;
 	}
 }
+function adminBarSubscribers() {
+	$currUser = wp_get_current_user();
+	$currUserRoles = count($currUser->roles);
+	$userRole = $currUser->roles[0];
+	if ( $currUserRoles == 1 && $userRole == 'subscriber' ) {
+		show_admin_bar( false );
+	}
+}
+
+
 add_action( 'admin_init', 'redirectSubscribers' );
+add_action( 'wp_loaded', 'adminBarSubscribers' );
