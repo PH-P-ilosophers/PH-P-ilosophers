@@ -14,130 +14,185 @@ Text Domain: prayer-times-plugin
 */
 
 
-defined ( 'ABSPATH' ) or exit( 'Cannot access this path directly.' );
+defined('ABSPATH') or exit('Cannot access this path directly.');
 
 
-class PT {
+class PT
+{
 
-    function __construct() {
-//      add_action ('wp_head', array($this, 'phpilosophers_prayer_times_plugin'));
-//      add_action('admin_init', array($this, 'prayer_times_plugin_register_settings'));
-        add_action( 'wp_head', array($this, 'get_prayer_times') );
-        add_action('wp_head', array($this, 'display_prayer_times'));
-        // add_action('wp_head', array($this, 'check_page_active'));
-        add_shortcode('prayer_times', array($this, 'generate_html'));
+    function __construct()
+    {
+
+        add_shortcode('prayer-time', array($this, 'shortcode_callback'));
+        add_action('wp_head', array($this, 'prayer_time_page_setup'));
+        add_action('wp_head', array($this, 'get_prayer_times'));
 
     }
-    
-    function activate() {
+
+    function activate()
+    {
         flush_rewrite_rules();
     }
 
-    function deactivate() {
+    function deactivate()
+    {
         flush_rewrite_rules();
     }
 
-    function uninstall() {
+    function uninstall()
+    {
         // Uninstall code here
-    }    
+    }
 
-function generate_html () {
+    function check_page_exists($slug, $post_type)
+    {
+        // Make sure that we have values set for $slug and $post_type
+        if (!$slug || !$post_type) {
+            return false;
+        }
+
+        // We will not sanitize the input as get_page_by_path() will handle that
+        $post_object = get_page_by_path($slug, OBJECT, $post_type);
+
+        if (!$post_object) {
+            return false;
+        }
+
+        return $post_object;
+    }
+
+    public function shortcode_callback($atts)
+    {
+
+        ob_start();
+
+        include plugin_dir_path(__FILE__) . 'templates/prayer-times.php';
+
+        return ob_get_clean();
+    }
+
+    function prayer_time_page_setup()
+    {
+
+        if ($this->check_page_exists("prayer-time-page", 'page'))
+            return;
+        wp_insert_post(array(
+            'post_title' => "Prayer Time",
+            'post_type' => 'page',
+            'post_content' => '[prayer-time]',
+            'post_name' => 'prayer-time-page',
+            'post_status' => 'publish'
+        ));
+    }
+
+    function generate_html()
+    {
+        if (is_page('prayer-time-page'))
+            include plugin_dir_path(__FILE__) . 'templates/prayer-times.php';
+    }
+
+    function generate_html2()
+    {
+        if (is_page('prayer-time-page'))
+            include plugin_dir_path(__FILE__) . 'templates/sampe.php';
+    }
 
 
-    include plugin_dir_path(__FILE__) . 'templates/prayer-times.php';
-}
+    function register()
+    {
+        add_action('admin_menu', array($this, 'add_admin_page'));
 
-function check_page_active() {
-    if (is_page('prayer-times-page')) {
+    }
+
+    function add_admin_page()
+    {
+        add_menu_page("Prayer Times Plugin", "Prayer Times", "manage_options", "prayer_times_plugin", array($this, "admin_index"), 'dashicons-clock', 110);
+    }
+
+    function admin_index()
+    {
+        require_once plugin_dir_path(__FILE__) . 'templates/prayer-times.php';
+    }
+
+    function get_prayer_times()
+    {
+
+        if (is_page('prayer-time-page')) {
+
+            // From URL to get webpage contents.
+            // $url = "https://api.aladhan.com/v1/methods";
+
+            $date_set = date('d-m-Y', strtotime('now'));
+            // Location coordinates for Trinidad and Tobago
+            $latitude = 10.657820;
+            $longitude = -61.516708;
+            $url = "https://api.aladhan.com/v1/timings/$date_set?latitude=$latitude&longitude=$longitude&method=99";
+
+
+            // Initialize a CURL session.
+            $ch = curl_init();
+
+            // Return Page contents.
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+            //grab URL and pass it to the variable.
+            curl_setopt($ch, CURLOPT_URL, $url);
+
+            $raw_data = curl_exec($ch);
+
+            $json_data = json_decode($raw_data, true);
+
+            $result = $json_data['data']['timings'];
+
+            return $result;
+        }
+    }
+
+    function display_prayer_times()
+    {
+
+        $result = $this->get_prayer_times();
+        $date_set = date('d-m-Y', strtotime('now'));
+
+        // return ("<div class='prayer-times'>Upcoming Prayer Times in Port Of Spain:<br><br>$date_set<br>" . implode("<br>", array_map(function($key, $value) {
+        //     return "$key : " . date('h:i', strtotime($value));
+        // }, array_keys($result), $result)) . "</div>");
+
+        // echo "Upcoming Prayer Times in Port Of Spain:<br>";
+        // echo "<br>";
+        // echo $date_set . "<br>";
+        // foreach ($result as $key => $value) {
+        //     echo "<br>";
+        //     echo $key . " : " . date('h:i',strtotime($value)) ;
+        //     echo "<br>";
+        // }
 
         $this->generate_html();
     }
-}
 
+    function display_prayer_times2()
+    {
 
-
-function register()
-{
-    add_action('admin_menu', array($this, 'add_admin_page'));
-
-}
-
-function add_admin_page()
-{
-    add_menu_page("Prayer Times Plugin", "Prayer Times", "manage_options", "prayer_times_plugin", array($this, "admin_index"), 'dashicons-clock', 110);
-}
-
-function admin_index()
-{
-    require_once plugin_dir_path(__FILE__) . 'templates/prayer-times.php';
-}
-
-function get_prayer_times () {
-
-    if (is_page('prayer-times-page')) {
-        
-        // From URL to get webpage contents.
-        // $url = "https://api.aladhan.com/v1/methods";
-
+        $result = $this->get_prayer_times();
         $date_set = date('d-m-Y', strtotime('now'));
-        // Location coordinates for Trinidad and Tobago
-        $latitude = 10.657820;
-        $longitude = -61.516708;
-        $url = "https://api.aladhan.com/v1/timings/$date_set?latitude=$latitude&longitude=$longitude&method=99";
- 
-        
-        // Initialize a CURL session.
-        $ch = curl_init(); 
-        
-        // Return Page contents.
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        
-        //grab URL and pass it to the variable.
-        curl_setopt($ch, CURLOPT_URL, $url);
-        
-        $raw_data = curl_exec($ch);
 
-        $json_data = json_decode($raw_data, true);
+        // return ("<div class='prayer-times'>Upcoming Prayer Times in Port Of Spain:<br><br>$date_set<br>" . implode("<br>", array_map(function($key, $value) {
+        //     return "$key : " . date('h:i', strtotime($value));
+        // }, array_keys($result), $result)) . "</div>");
 
-        $result = $json_data['data']['timings'];
+        // echo "Upcoming Prayer Times in Port Of Spain:<br>";
+        // echo "<br>";
+        // echo $date_set . "<br>";
+        // foreach ($result as $key => $value) {
+        //     echo "<br>";
+        //     echo $key . " : " . date('h:i',strtotime($value)) ;
+        //     echo "<br>";
+        // }
 
-        return $result;
+        $this->generate_html2();
     }
-}
 
-function display_prayer_times() {
 
-    $result = $this->get_prayer_times();
-    $date_set = date('d-m-Y', strtotime('now'));
-
-    // return ("<div class='prayer-times'>Upcoming Prayer Times in Port Of Spain:<br><br>$date_set<br>" . implode("<br>", array_map(function($key, $value) {
-    //     return "$key : " . date('h:i', strtotime($value));
-    // }, array_keys($result), $result)) . "</div>");
-
-    // echo "Upcoming Prayer Times in Port Of Spain:<br>";
-    // echo "<br>";
-    // echo $date_set . "<br>";
-    // foreach ($result as $key => $value) {
-    //     echo "<br>";
-    //     echo $key . " : " . date('h:i',strtotime($value)) ;
-    //     echo "<br>";
-    // }
-
-    $this->generate_html();
-}
-
-function prayer_times_setup()
-{
-
-    if (check_page_exists("prayer-times-page", 'page'))
-        return;
-    wp_insert_post(array(
-        'post_title' => "Prayer Times",
-        'post_type' => 'page',
-        'post_name' => 'prayer-times-page',
-        'post_status' => 'publish'
-    ));
-}
 }
 
 $wp = new PT();
@@ -177,7 +232,7 @@ $wp->register();
 //             'prayer_times_plugin_field_callback',  
 //             'prayer-times-plugin',
 //             'prayer_times_plugin_section',
-            
+
 //         );
 //     }
 
@@ -187,21 +242,21 @@ $wp->register();
 
 //         if (is_page('events-page')) {
 //             echo "Hey";
-            
+
 //             // From URL to get webpage contents.
 //             $url = "https://www.geeksforgeeks.org/";
-            
+
 //             // Initialize a CURL session.
 //             $ch = curl_init(); 
-            
+
 //             // Return Page contents.
 //             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            
+
 //             //grab URL and pass it to the variable.
 //             curl_setopt($ch, CURLOPT_URL, $url);
-            
+
 //             $result = curl_exec($ch);
-            
+
 //             echo $result; 
 //         }
 //     }
@@ -210,10 +265,8 @@ $wp->register();
 // if (class_exists('PraryerTimesPlugin')) {
 //     $PrayTimesPlugin = new PrayerTimesPlugin();
 // }
-    
+
 //     add_action( 'admin_menu', 'prayer_times_menu' );
 // }
 
 ?>
-
-
