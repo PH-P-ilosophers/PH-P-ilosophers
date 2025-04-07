@@ -1,0 +1,27 @@
+/* Version: 1.1 */
+.event-posts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.event-card{
+    margin:4px 10px;
+    border-radius: 15px;
+    padding: 10px;
+    border-style: groove;
+    transition: 0.5s;
+    max-width: fit-content;
+}
+
+.event-card:hover{
+    background-color: rgb(181, 205, 187)
+}
+.event-card:hover,
+.event-card:focus-within {
+    transform: translateY(-0.3rem);
+    ~ .card {
+      transform: translateX(1rem);
+    }
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
