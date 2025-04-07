@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.35, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.35, for macos13 (arm64)
 --
--- Host: ::1    Database: local
+-- Host: localhost    Database: local
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
