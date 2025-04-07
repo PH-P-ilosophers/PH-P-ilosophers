@@ -341,6 +341,23 @@ function adminBarSubscribers()
 	}
 }
 
+function register_question_post_type()
+{
+	register_post_type('question', array(
+		'labels' => array(
+			'name' => 'Questions',
+			'singular_name' => 'Question',
+			'add_new_item' => 'Ask a Question'
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'questions'),
+		'supports' => array('title', 'editor', 'author', 'comments'),
+		'menu_icon' => 'dashicons-editor-help'
+	));
+}
+
+add_action('init', 'register_question_post_type');
 
 add_action('admin_init', 'redirectSubscribers');
 add_action('wp_loaded', 'adminBarSubscribers');
