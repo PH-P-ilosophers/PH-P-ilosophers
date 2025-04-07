@@ -452,3 +452,12 @@ AH00558: httpd.exe: Could not reliably determine the server's fully qualified do
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
 AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
 [Sun Apr 06 17:28:30.027987 2025] [mpm_winnt:notice] [pid 29612:tid 832] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
+[Sun Apr 06 23:10:51.967014 2025] [core:warn] [pid 19648:tid 752] AH00098: pid file C:/Users/Default.LAPTOP-10891MC3/AppData/Roaming/Local/run/MK3gU7YRT/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Apr 06 23:10:51.971101 2025] [mpm_winnt:notice] [pid 19648:tid 752] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Sun Apr 06 23:10:51.971101 2025] [mpm_winnt:notice] [pid 19648:tid 752] AH00456: Server built: Apr 21 2020 13:46:54
+[Sun Apr 06 23:10:51.971101 2025] [core:notice] [pid 19648:tid 752] AH00094: Command line: 'C:\\Users\\Default.LAPTOP-10891MC3\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/Default.LAPTOP-10891MC3/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\Default.LAPTOP-10891MC3\\AppData\\Roaming\\Local\\run\\MK3gU7YRT\\conf\\apache\\apache2.conf'
+[Sun Apr 06 23:10:51.979115 2025] [mpm_winnt:notice] [pid 19648:tid 752] AH00418: Parent: Created child process 24760
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::6a4d:16c7:3903:6cf4. Set the 'ServerName' directive globally to suppress this message
+[Sun Apr 06 23:10:54.651001 2025] [mpm_winnt:notice] [pid 24760:tid 828] AH00354: Child: Starting 64 worker threads.
