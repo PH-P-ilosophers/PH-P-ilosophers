@@ -21,7 +21,7 @@ function islamicPostTypes()
 
     register_post_type('event-type', array(
         'supports' => array('title', 'editor', "excerpt", "custom-fields"),
-        'rewrite' => array('slug' => 'events'),
+        'rewrite' => array('slug' => 'event-types'),
         'has_archive' => true,
         'public' => true,
         "show_in_rest" => true,

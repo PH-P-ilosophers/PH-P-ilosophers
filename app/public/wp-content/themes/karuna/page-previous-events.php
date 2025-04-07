@@ -45,7 +45,7 @@ $query = new WP_Query(array(
         the_content() ?>
         <br>
         <?php
-        the_field("event-date");
+        echo date("F,j Y", strtotime(get_field("event-date")));
     endwhile;
 
     if ($num_posts == 0)
