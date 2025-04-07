@@ -26,6 +26,7 @@ class PT
         add_shortcode('prayer-time', array($this, 'shortcode_callback'));
         add_action('wp_head', array($this, 'prayer_time_page_setup'));
         add_action('wp_head', array($this, 'get_prayer_times'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
 
     }
 
@@ -77,7 +78,7 @@ class PT
         if ($this->check_page_exists("prayer-time-page", 'page'))
             return;
         wp_insert_post(array(
-            'post_title' => "Prayer Time",
+            'post_title' => "Prayer Times",
             'post_type' => 'page',
             'post_content' => '[prayer-time]',
             'post_name' => 'prayer-time-page',
@@ -142,6 +143,7 @@ class PT
 
             $json_data = json_decode($raw_data, true);
 
+            global $result;
             $result = $json_data['data']['timings'];
 
             return $result;
@@ -154,19 +156,6 @@ class PT
         $result = $this->get_prayer_times();
         $date_set = date('d-m-Y', strtotime('now'));
 
-        // return ("<div class='prayer-times'>Upcoming Prayer Times in Port Of Spain:<br><br>$date_set<br>" . implode("<br>", array_map(function($key, $value) {
-        //     return "$key : " . date('h:i', strtotime($value));
-        // }, array_keys($result), $result)) . "</div>");
-
-        // echo "Upcoming Prayer Times in Port Of Spain:<br>";
-        // echo "<br>";
-        // echo $date_set . "<br>";
-        // foreach ($result as $key => $value) {
-        //     echo "<br>";
-        //     echo $key . " : " . date('h:i',strtotime($value)) ;
-        //     echo "<br>";
-        // }
-
         $this->generate_html();
     }
 
@@ -176,20 +165,13 @@ class PT
         $result = $this->get_prayer_times();
         $date_set = date('d-m-Y', strtotime('now'));
 
-        // return ("<div class='prayer-times'>Upcoming Prayer Times in Port Of Spain:<br><br>$date_set<br>" . implode("<br>", array_map(function($key, $value) {
-        //     return "$key : " . date('h:i', strtotime($value));
-        // }, array_keys($result), $result)) . "</div>");
-
-        // echo "Upcoming Prayer Times in Port Of Spain:<br>";
-        // echo "<br>";
-        // echo $date_set . "<br>";
-        // foreach ($result as $key => $value) {
-        //     echo "<br>";
-        //     echo $key . " : " . date('h:i',strtotime($value)) ;
-        //     echo "<br>";
-        // }
-
         $this->generate_html2();
+    }
+
+    public function enqueue_scripts()
+    {
+        wp_enqueue_style('prayer-times-style', plugin_dir_url(__FILE__) . 'assets/css/style.css', array(), '1.0.0');
+        
     }
 
 
